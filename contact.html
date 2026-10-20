@@ -1,0 +1,189 @@
+<!-- 公共头部 partial -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们 | 洛阳和鼎机电设备有限公司</title>
+  <meta name="description" content="深耕智能电子领域 18 年,为世界提供高品质的电子产品研发与制造服务">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        Hdintool
+        <small>诚信、高效、严谨、规范</small>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="/" class="">首页</a></li>
+        <li><a href="/products.html" class="">产品中心</a></li>
+        <li><a href="/news.html" class="">新闻资讯</a></li>
+        <li><a href="/about.html" class="">关于我们</a></li>
+        <li><a href="/contact.html" class="active">联系我们</a></li>
+      </ul>
+      <div class="nav-tools">
+        <a href="/contact.html" class="lang-switch font-bold">中文</a>
+        <a href="/en/contact.html" class="lang-switch ">EN</a>
+      </div>
+    </div>
+  </nav>
+
+<div class="breadcrumb">
+  <a href="/">首页</a> <span>›</span> <span>联系我们</span>
+</div>
+
+<section class="container">
+  <div class="section-header">
+    <h2>联系我们</h2>
+    <p>我们随时为您服务</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+    <div style="background: white; padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border);">
+      <h3>在线咨询</h3>
+
+      <div id="successBox" class="alert-success" style="display: none;">
+        提交成功,我们会尽快回复!
+      </div>
+
+      <form id="contactForm">
+        <div class="form-group">
+          <label>您的姓名 *</label>
+          <input name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>邮箱地址 *</label>
+          <input name="email" type="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>联系电话</label>
+          <input name="phone" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>留言内容 *</label>
+          <textarea name="message" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">提交留言</button>
+      </form>
+    </div>
+
+    <div>
+      <div style="background: white; padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+        <h4>📍 公司地址</h4>
+        <p style="color: var(--color-muted); margin: 0;">唐宫中路16号天元写字广场东楼中单元503室</p>
+      </div>
+      <div style="background: white; padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+        <h4>📞 联系电话</h4>
+        <p style="color: var(--color-muted); margin: 0;">037962227718</p>
+      </div>
+      <div style="background: white; padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+        <h4>✉️ 电子邮箱</h4>
+        <p style="color: var(--color-muted); margin: 0;">lyhddz@126.com</p>
+      </div>
+      <div style="background: white; padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border);">
+        <h4>🕒 营业时间</h4>
+        <p style="color: var(--color-muted); margin: 0;">
+          周一至周六 9:00 - 21:00<br>
+          周日 休息
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  var endpoint = 'https://formsubmit.co/ajax/lyhddz@126.com';
+  var targetMail = 'lyhddz@126.com';
+
+  // 没有配置收件端点时,降级为邮件客户端发送
+  if (!endpoint) {
+    var subject = encodeURIComponent('网站询价 - ' + (data.name || ''));
+    var body = encodeURIComponent(
+      '姓名: ' + (data.name || '') + '\n' +
+      '邮箱: ' + (data.email || '') + '\n' +
+      '电话: ' + (data.phone || '') + '\n\n' +
+      (data.message || '')
+    );
+    window.location.href = 'mailto:' + targetMail + '?subject=' + subject + '&body=' + body;
+    document.getElementById('successBox').style.display = 'block';
+    setTimeout(() => document.getElementById('successBox').style.display = 'none', 5000);
+    return;
+  }
+
+  try {
+    var res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    var json = await res.json();
+    if (json && (json.ok || json.success)) {
+      document.getElementById('successBox').style.display = 'block';
+      form.reset();
+      setTimeout(() => document.getElementById('successBox').style.display = 'none', 5000);
+    }
+  } catch (err) {
+    alert('提交失败,请直接发邮件至 ' + targetMail);
+  }
+});
+</script>
+
+<!-- 公共尾部 partial -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>洛阳和鼎机电设备有限公司</h4>
+        <p style="font-size: 0.875rem; line-height: 1.6;">
+          洛阳和鼎机电设备有限公司位于九朝古都洛阳，近年来随着公司规模不断发展壮大，现已拥有1个销售公司2个销售事业部，1个高新技术研发中心，是一家技术实力雄厚、服务网络丰富的科工贸一体化高新技术企业，客户群体遍布全国各地各行各业。
+公司目前拥有发明专利3项，公司自研产品拥有自主知识产权，注册商标Hdintool。
+公司不但拥有专业的技术人员及先进的加工设备、检测设备，并且对技术人员进行不断的学习培训，力求公司专业人员的技术水平更上一层楼；同时顺应科技发展，全面进军前沿高新科技领域，以优质、高效的售前售后服务，赢得广大用户支持，在业内建立了良好的口碑。
+诚信、高效、严谨、规范是公司的服务宗旨，亦是对广大用户的坚定承诺，坚持“客户利益高于一切”的原则，为每一个合作伙伴提供优质的产品及全方位最佳的售前、售中、售后服务。
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>产品中心</h4>
+        <ul>
+          
+            <li><a href="/products.html?category=cat-1">智能控制器</a></li>
+          
+            <li><a href="/products.html?category=cat-2">遥控器系列</a></li>
+          
+            <li><a href="/products.html?category=cat-3">LED 灯具</a></li>
+          
+            <li><a href="/products.html?category=cat-4">智能传感器</a></li>
+          
+            <li><a href="/products.html?category=cat-5">DMX 系统</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>关于我们</h4>
+        <ul>
+          <li><a href="/about.html">关于我们</a></li>
+          <li><a href="/news.html">新闻资讯</a></li>
+          <li><a href="/contact.html">联系我们</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>联系电话</h4>
+        <ul>
+          <li>📞 037962227718</li>
+          <li>✉️ lyhddz@126.com</li>
+          <li>📍 唐宫中路16号天元写字广场东楼中单元503室</li>
+          <li>🕒 9:00-18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 洛阳和鼎机电设备有限公司. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

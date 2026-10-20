@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#eff6ff"/>
+  <circle cx="200" cy="150" r="80" fill="#fbbf24" opacity="0.4"/>
+  <circle cx="200" cy="150" r="60" fill="#fbbf24"/>
+  <circle cx="200" cy="150" r="30" fill="#1f2937"/>
+  <path d="M 100 150 L 300 150 M 200 50 L 200 250" stroke="white" stroke-width="2" opacity="0.5"/>
+  <text x="200" y="280" text-anchor="middle" fill="#1f2937" font-size="14" font-weight="600" font-family="sans-serif">LED Downlight</text>
+</svg>

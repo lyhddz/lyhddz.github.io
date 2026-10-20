@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f0f9ff"/>
+  <rect x="80" y="80" width="240" height="140" rx="12" fill="#1e40af" opacity="0.85"/>
+  <circle cx="140" cy="150" r="20" fill="#f59e0b"/>
+  <circle cx="200" cy="150" r="20" fill="#10b981"/>
+  <circle cx="260" cy="150" r="20" fill="#3b82f6"/>
+  <text x="200" y="250" text-anchor="middle" fill="#1f2937" font-size="14" font-weight="600" font-family="sans-serif">Smart Controller</text>
+</svg>

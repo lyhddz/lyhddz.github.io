@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#ecfdf5"/>
+  <rect x="170" y="80" width="60" height="140" rx="8" fill="#10b981"/>
+  <circle cx="200" cy="120" r="20" fill="#1f2937" opacity="0.6"/>
+  <circle cx="200" cy="120" r="10" fill="#f59e0b"/>
+  <path d="M 180 170 L 220 170 M 180 180 L 220 180 M 180 190 L 220 190 M 180 200 L 220 200" stroke="white" stroke-width="2"/>
+  <text x="200" y="280" text-anchor="middle" fill="#1f2937" font-size="14" font-weight="600" font-family="sans-serif">Sensor Module</text>
+</svg>

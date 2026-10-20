@@ -1,0 +1,271 @@
+<!-- 公共头部 partial -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品中心 | 洛阳和鼎机电设备有限公司</title>
+  <meta name="description" content="深耕智能电子领域 18 年,为世界提供高品质的电子产品研发与制造服务">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        Hdintool
+        <small>诚信、高效、严谨、规范</small>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="/" class="">首页</a></li>
+        <li><a href="/products.html" class="active">产品中心</a></li>
+        <li><a href="/news.html" class="">新闻资讯</a></li>
+        <li><a href="/about.html" class="">关于我们</a></li>
+        <li><a href="/contact.html" class="">联系我们</a></li>
+      </ul>
+      <div class="nav-tools">
+        <a href="/products.html" class="lang-switch font-bold">中文</a>
+        <a href="/en/products.html" class="lang-switch ">EN</a>
+      </div>
+    </div>
+  </nav>
+
+<div class="breadcrumb">
+  <a href="/">首页</a> <span>›</span> <span>产品中心</span>
+</div>
+
+<section class="container">
+  <div class="section-header">
+    <h2>产品中心</h2>
+    <p>智能电子产品全系列</p>
+  </div>
+
+  <!-- 分类筛选(客户端即时过滤,无需刷新页面) -->
+  <div id="catFilter" style="margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+    <button type="button" class="btn btn-sm btn-sm-primary" data-cat="all">全部分类</button>
+    
+      
+      <button type="button" class="btn btn-sm" data-cat="cat-1"
+              title="0 个产品"
+              style="opacity: .45;">
+        智能控制器
+        <span style="opacity: .65; font-size: .85em;">(0)</span>
+      </button>
+    
+      
+      <button type="button" class="btn btn-sm" data-cat="cat-2"
+              title="1 个产品"
+              style="">
+        遥控器系列
+        <span style="opacity: .65; font-size: .85em;">(1)</span>
+      </button>
+    
+      
+      <button type="button" class="btn btn-sm" data-cat="cat-3"
+              title="2 个产品"
+              style="">
+        LED 灯具
+        <span style="opacity: .65; font-size: .85em;">(2)</span>
+      </button>
+    
+      
+      <button type="button" class="btn btn-sm" data-cat="cat-4"
+              title="1 个产品"
+              style="">
+        智能传感器
+        <span style="opacity: .65; font-size: .85em;">(1)</span>
+      </button>
+    
+      
+      <button type="button" class="btn btn-sm" data-cat="cat-5"
+              title="1 个产品"
+              style="">
+        DMX 系统
+        <span style="opacity: .65; font-size: .85em;">(1)</span>
+      </button>
+    
+      
+      <button type="button" class="btn btn-sm" data-cat="cat-6"
+              title="1 个产品"
+              style="">
+        电源配件
+        <span style="opacity: .65; font-size: .85em;">(1)</span>
+      </button>
+    
+  </div>
+
+  <div class="grid-4" id="productGrid">
+    
+      <a href="/products/p-001.html" class="product-card" data-cat="cat-3">
+        <div class="product-card-img">
+          <img src="/static/uploads/products/p-001-main.jpg" alt="室内家居">
+        </div>
+        <div class="product-card-body">
+          <span class="model">室内家居</span>
+          <h3>智能 LED 控制器</h3>
+          <p>支持 2.4G/WiFi/Zigbee 三模通讯,RGB+CCT 全调,适用于智能家居照明。</p>
+        </div>
+      </a>
+    
+      <a href="/products/p-002.html" class="product-card" data-cat="cat-2">
+        <div class="product-card-img">
+          <img src="/static/images/product-remote.svg" alt="RC-200">
+        </div>
+        <div class="product-card-body">
+          <span class="model">RC-200</span>
+          <h3>手持式遥控器</h3>
+          <p>人体工学设计,4 区域独立控制,2.4G 无线射频。</p>
+        </div>
+      </a>
+    
+      <a href="/products/p-003.html" class="product-card" data-cat="cat-3">
+        <div class="product-card-img">
+          <img src="/static/images/product-downlight.svg" alt="DL-9W">
+        </div>
+        <div class="product-card-body">
+          <span class="model">DL-9W</span>
+          <h3>9W 防眩 LED 筒灯</h3>
+          <p>深度防眩设计,显色指数 Ra≥90,适用酒店/家居。</p>
+        </div>
+      </a>
+    
+      <a href="/products/p-004.html" class="product-card" data-cat="cat-4">
+        <div class="product-card-img">
+          <img src="/static/images/product-sensor.svg" alt="SR-24G">
+        </div>
+        <div class="product-card-body">
+          <span class="model">SR-24G</span>
+          <h3>24GHz 微波人体存在传感器</h3>
+          <p>精准检测人体存在,毫米波雷达技术,适合智能照明联动。</p>
+        </div>
+      </a>
+    
+      <a href="/products/p-005.html" class="product-card" data-cat="cat-5">
+        <div class="product-card-img">
+          <img src="/static/images/product-dmx.svg" alt="DMX-512">
+        </div>
+        <div class="product-card-body">
+          <span class="model">DMX-512</span>
+          <h3>DMX512 解码器</h3>
+          <p>标准 DMX512 协议,4 通道输出,DIN 导轨安装。</p>
+        </div>
+      </a>
+    
+      <a href="/products/p-006.html" class="product-card" data-cat="cat-6">
+        <div class="product-card-img">
+          <img src="/static/images/product-power.svg" alt="PS-200">
+        </div>
+        <div class="product-card-body">
+          <span class="model">PS-200</span>
+          <h3>200W 工业级开关电源</h3>
+          <p>AC180~265V 宽压输入,过压过流保护,适用于 LED 工程。</p>
+        </div>
+      </a>
+    
+  </div>
+
+  <div id="noResult" style="display: none; text-align: center; padding: 3rem; color: var(--color-muted);">
+    未找到符合条件的产品
+  </div>
+</section>
+
+<script>
+(function () {
+  var filter = document.getElementById('catFilter');
+  var grid = document.getElementById('productGrid');
+  if (!filter || !grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.product-card'));
+  var noResult = document.getElementById('noResult');
+  var btns = Array.prototype.slice.call(filter.querySelectorAll('[data-cat]'));
+
+  function apply(cat) {
+    var shown = 0;
+    cards.forEach(function (c) {
+      var hit = (cat === 'all' || c.getAttribute('data-cat') === cat);
+      c.style.display = hit ? '' : 'none';
+      if (hit) shown++;
+    });
+    if (noResult) noResult.style.display = shown ? 'none' : 'block';
+    btns.forEach(function (b) {
+      b.classList.toggle('btn-sm-primary', b.getAttribute('data-cat') === cat);
+    });
+  }
+
+  function select(cat) {
+    apply(cat);
+    // 同步到地址栏,方便复制链接分享某个分类(不产生历史记录)
+    try {
+      var u = location.pathname + (cat === 'all' ? '' : '?category=' + encodeURIComponent(cat));
+      history.replaceState(null, '', u);
+    } catch (err) { /* 老浏览器忽略 */ }
+  }
+
+  filter.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-cat]');
+    if (!btn) return;
+    select(btn.getAttribute('data-cat'));
+  });
+
+  // 支持通过 ?category=xxx 直接进入时自动选中
+  var m = location.search.match(/[?&]category=([^&]+)/);
+  var cat = m ? decodeURIComponent(m[1]) : 'all';
+  // 地址栏里写了不存在的分类时退回"全部",避免一进页面就是空白
+  var known = btns.some(function (b) { return b.getAttribute('data-cat') === cat; });
+  if (cat !== 'all' && !known) cat = 'all';
+  apply(cat);
+})();
+</script>
+
+<!-- 公共尾部 partial -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>洛阳和鼎机电设备有限公司</h4>
+        <p style="font-size: 0.875rem; line-height: 1.6;">
+          洛阳和鼎机电设备有限公司位于九朝古都洛阳，近年来随着公司规模不断发展壮大，现已拥有1个销售公司2个销售事业部，1个高新技术研发中心，是一家技术实力雄厚、服务网络丰富的科工贸一体化高新技术企业，客户群体遍布全国各地各行各业。
+公司目前拥有发明专利3项，公司自研产品拥有自主知识产权，注册商标Hdintool。
+公司不但拥有专业的技术人员及先进的加工设备、检测设备，并且对技术人员进行不断的学习培训，力求公司专业人员的技术水平更上一层楼；同时顺应科技发展，全面进军前沿高新科技领域，以优质、高效的售前售后服务，赢得广大用户支持，在业内建立了良好的口碑。
+诚信、高效、严谨、规范是公司的服务宗旨，亦是对广大用户的坚定承诺，坚持“客户利益高于一切”的原则，为每一个合作伙伴提供优质的产品及全方位最佳的售前、售中、售后服务。
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>产品中心</h4>
+        <ul>
+          
+            <li><a href="/products.html?category=cat-1">智能控制器</a></li>
+          
+            <li><a href="/products.html?category=cat-2">遥控器系列</a></li>
+          
+            <li><a href="/products.html?category=cat-3">LED 灯具</a></li>
+          
+            <li><a href="/products.html?category=cat-4">智能传感器</a></li>
+          
+            <li><a href="/products.html?category=cat-5">DMX 系统</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>关于我们</h4>
+        <ul>
+          <li><a href="/about.html">关于我们</a></li>
+          <li><a href="/news.html">新闻资讯</a></li>
+          <li><a href="/contact.html">联系我们</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>联系电话</h4>
+        <ul>
+          <li>📞 037962227718</li>
+          <li>✉️ lyhddz@126.com</li>
+          <li>📍 唐宫中路16号天元写字广场东楼中单元503室</li>
+          <li>🕒 9:00-18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 洛阳和鼎机电设备有限公司. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

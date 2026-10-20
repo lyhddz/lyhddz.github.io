@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#fef3c7"/>
+  <rect x="120" y="60" width="160" height="180" rx="20" fill="#1e3a8a"/>
+  <circle cx="200" cy="100" r="6" fill="white"/>
+  <rect x="140" y="120" width="120" height="20" rx="10" fill="#f59e0b"/>
+  <rect x="140" y="150" width="120" height="20" rx="10" fill="white" opacity="0.4"/>
+  <rect x="140" y="180" width="60" height="20" rx="10" fill="#10b981"/>
+  <rect x="210" y="180" width="50" height="20" rx="10" fill="white" opacity="0.4"/>
+  <text x="200" y="280" text-anchor="middle" fill="#1f2937" font-size="14" font-weight="600" font-family="sans-serif">Remote Control</text>
+</svg>

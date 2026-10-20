@@ -1,0 +1,9 @@
+# GitHub Pages 静态站仓库
+# 本目录由 ../export_static.js 自动产出,请勿手工编辑
+# 改动内容请改 ../db.json 和 ../templates,然后在项目根目录跑 node export_static.js
+
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+node_modules/
