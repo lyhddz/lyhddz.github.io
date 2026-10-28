@@ -46,12 +46,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://light.lyhdjd.cn/products/p-1792570413260.html</loc>
+    <loc>https://light.lyhdjd.cn/products/p-1792570967217.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://light.lyhdjd.cn/products/p-1792570967217.html</loc>
+    <loc>https://light.lyhdjd.cn/products/p-1792570413260.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -76,6 +76,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://light.lyhdjd.cn/products/p-1792991504810.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://light.lyhdjd.cn/products/p-1792575689426.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -87,11 +92,6 @@
   </url>
   <url>
     <loc>https://light.lyhdjd.cn/products/p-1792986660048.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://light.lyhdjd.cn/products/p-1792991504810.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -236,12 +236,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://light.lyhdjd.cn/en/products/p-1792570413260.html</loc>
+    <loc>https://light.lyhdjd.cn/en/products/p-1792570967217.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://light.lyhdjd.cn/en/products/p-1792570967217.html</loc>
+    <loc>https://light.lyhdjd.cn/en/products/p-1792570413260.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -266,6 +266,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://light.lyhdjd.cn/en/products/p-1792991504810.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://light.lyhdjd.cn/en/products/p-1792575689426.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -277,11 +282,6 @@
   </url>
   <url>
     <loc>https://light.lyhdjd.cn/en/products/p-1792986660048.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://light.lyhdjd.cn/en/products/p-1792991504810.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
