@@ -181,6 +181,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://light.lyhdjd.cn/page/lighting-solution/pi-1793175098572.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://light.lyhdjd.cn/page/lighting-solution/pi-1793176740483.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://light.lyhdjd.cn/en/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -357,6 +367,16 @@
   </url>
   <url>
     <loc>https://light.lyhdjd.cn/en/page/lighting-solution/pi-1793096411636.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://light.lyhdjd.cn/en/page/lighting-solution/pi-1793175098572.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://light.lyhdjd.cn/en/page/lighting-solution/pi-1793176740483.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
