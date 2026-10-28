@@ -88,6 +88,18 @@ a:hover { color: var(--color-primary-dark); }
   cursor: pointer;
   font-size: 0.875rem;
 }
+/* 汉堡按钮:桌面隐藏,手机显示 */
+.nav-toggle {
+  display: none;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0.3rem 0.55rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
 
 /* Hero */
 .hero {
@@ -156,7 +168,34 @@ a:hover { color: var(--color-primary-dark); }
 @media (max-width: 768px) {
   .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .hero h1 { font-size: 2rem; }
-  .nav-menu { display: none; }
+  /* 手机导航:菜单收起,点 ☰ 展开 */
+  .nav-inner {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 60px;
+    padding: 0.5rem 1rem;
+  }
+  .nav-logo { font-size: 1.05rem; }
+  .nav-toggle { display: block; }
+  /* 第一行:logo + 语言/☰;第二行才是菜单 */
+  .nav-logo { order: 1; }
+  .nav-tools { order: 2; margin-left: auto; }
+  .nav-menu {
+    display: none;
+    order: 3;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+  .nav-inner.nav-open .nav-menu { display: flex; }
+  .nav-menu a {
+    display: block;
+    padding: 0.7rem 0.25rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nav-menu a.active::after,
+  .nav-menu a:hover::after { display: none; }
+  .nav-menu a.active { color: var(--color-primary); }
 }
 
 /* 产品卡 */
