@@ -54,9 +54,7 @@
     <div style="background: white; padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border);">
       <h3>Send Inquiry</h3>
 
-      <div id="successBox" class="alert-success" style="display: none;">
-        Submitted successfully, we&#39;ll reply ASAP!
-      </div>
+      <div id="successBox" class="alert-success" style="display: none;"></div>
 
       <form id="contactForm">
         <div class="form-group">
@@ -104,44 +102,63 @@
 </section>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const data = Object.fromEntries(new FormData(form));
-  var endpoint = 'https://formsubmit.co/ajax/lyhddz@126.com';
-  var targetMail = 'lyhddz@126.com';
+(function () {
+  var successBox = document.getElementById('successBox');
+  var okText = 'Submitted successfully, we&#39;ll reply ASAP!';
 
-  // 没有配置收件端点时,降级为邮件客户端发送
-  if (!endpoint) {
-    var subject = encodeURIComponent('网站询价 - ' + (data.name || ''));
+  function showTip(text) {
+    successBox.innerHTML = text;
+    successBox.style.display = 'block';
+    setTimeout(function () { successBox.style.display = 'none'; }, 10000);
+  }
+
+  // 兜底:表单服务挂掉/拒绝时,调起邮件客户端把询盘发出去,信息不丢
+  function fallbackMailto(data, targetMail, tipText) {
+    var subject = encodeURIComponent('Website Inquiry - ' + (data.name || ''));
     var body = encodeURIComponent(
-      '姓名: ' + (data.name || '') + '\n' +
-      '邮箱: ' + (data.email || '') + '\n' +
-      '电话: ' + (data.phone || '') + '\n\n' +
+      'Name: ' + (data.name || '') + '\n' +
+      'Email: ' + (data.email || '') + '\n' +
+      'Phone: ' + (data.phone || '') + '\n\n' +
       (data.message || '')
     );
     window.location.href = 'mailto:' + targetMail + '?subject=' + subject + '&body=' + body;
-    document.getElementById('successBox').style.display = 'block';
-    setTimeout(() => document.getElementById('successBox').style.display = 'none', 5000);
-    return;
+    showTip(tipText + '<br><strong>' + targetMail + '</strong>');
   }
 
-  try {
-    var res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    var json = await res.json();
-    if (json && (json.ok || json.success)) {
-      document.getElementById('successBox').style.display = 'block';
-      form.reset();
-      setTimeout(() => document.getElementById('successBox').style.display = 'none', 5000);
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var data = Object.fromEntries(new FormData(form));
+    var endpoint = 'https://formsubmit.co/ajax/lyhddz@126.com';
+    var targetMail = 'lyhddz@126.com';
+    var degradedTip = 'The form service is temporarily unavailable. Your email client has opened with the message pre-filled - just hit send. Or email us directly at:';
+
+    // 没有配置收件端点时,直接走邮件客户端
+    if (!endpoint) {
+      fallbackMailto(data, targetMail, okText);
+      return;
     }
-  } catch (err) {
-    alert('提交失败,请直接发邮件至 ' + targetMail);
-  }
-});
+
+    try {
+      var res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      var json = await res.json();
+      if (json && (json.ok || json.success === true || json.success === 'true')) {
+        showTip(okText);
+        form.reset();
+      } else {
+        // 服务端明确拒绝(未激活/超额/宕机),降级为邮件客户端
+        fallbackMailto(data, targetMail, degradedTip);
+      }
+    } catch (err) {
+      // 网络失败/第三方服务宕机,同样降级,别让询盘凭空消失
+      fallbackMailto(data, targetMail, degradedTip);
+    }
+  });
+})();
 </script>
 
 <!-- 公共尾部 partial -->
